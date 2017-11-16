@@ -1,0 +1,26 @@
+#!/bin/sh -x
+# $Id: mk.tests,v 1.4 2013-06-07 12:38:34-07 - - $
+export PATH=$PATH:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin
+ulimit -f 32
+ulimit -t 120
+
+PROG=./spellchk
+GRIND="valgrind --leak-check=full"
+
+function runtest {
+   test=$1
+   shift
+   echo $0: Running $PROG "$@"
+   $PROG "$@" >test.$test.out 2>test.$test.err
+   echo status = $? >test.$test.status
+   ls -goa test.$test.*
+}
+
+runtest test1 test[12]*.in
+runtest test2 test*.in
+runtest test3 -d user.dict test*.in
+runtest test4 /foo /bar/baz quuux
+runtest test5 -n test[12]*.in
+runtest test6 -xx -n -d user.dict </dev/null
+$GRIND $PROG -n -d user.dict test3.in >grind.output 2>&1
+

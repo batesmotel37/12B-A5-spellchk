@@ -1,0 +1,84 @@
+Script started on Fri 14 Mar 2014 05:56:57 PM PDT
+You are currently using 5% (25.2 MiB) of your 488.3 MiB quota.
+]0;khigh@be-linux40:asg5[khigh@be-linux40 asg5]$ val[K[K[Kvalgrind--[K[K --leak-check=full spellchk -n -d user.dict <de v/[K[K[A[80G[K[K/d ev/null
+==14537== Memcheck, a memory error detector
+==14537== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==14537== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==14537== Command: spellchk -n -d user.dict
+==14537== 
+==14537== 
+==14537== HEAP SUMMARY:
+==14537==     in use at exit: 80 bytes in 5 blocks
+==14537==   total heap usage: 56 allocs, 51 frees, 18,527 bytes allocated
+==14537== 
+==14537== 80 (64 direct, 16 indirect) bytes in 4 blocks are definitely lost in loss record 2 of 2
+==14537==    at 0x4A06A2E: malloc (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14537==    by 0x401456: put_hashset (hashset.c:58)
+==14537==    by 0x401D75: load_dictionary (spellchk.c:83)
+==14537==    by 0x401F16: main (spellchk.c:128)
+==14537== 
+==14537== LEAK SUMMARY:
+==14537==    definitely lost: 64 bytes in 4 blocks
+==14537==    indirectly lost: 16 bytes in 1 blocks
+==14537==      possibly lost: 0 bytes in 0 blocks
+==14537==    still reachable: 0 bytes in 0 blocks
+==14537==         suppressed: 0 bytes in 0 blocks
+==14537== 
+==14537== For counts of detected and suppressed errors, rerun with: -v
+==14537== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)
+]0;khigh@be-linux40:asg5[khigh@be-linux40 asg5]$ valgrind --leak-check=full spellchk -n -d user.dict < / dev/null[A[80G[P < /dd[P[A[76G[P[80Gee[P[A[75G[P[80Gvv[P[A[74G[P[80G//[P[A[73G[P[80Gnnull[K[A[72G[P[80Guull[K[A[71G[P[80Gll[K[A[70G[P[79Glll[K[A[69G[P[P[P[P[P[P[P[P
+==14544== Memcheck, a memory error detector
+==14544== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==14544== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==14544== Command: spellchk
+==14544== 
+==14544== 
+==14544== HEAP SUMMARY:
+==14544==     in use at exit: 71,984 bytes in 4,499 blocks
+==14544==   total heap usage: 50,304 allocs, 45,805 frees, 1,674,345 bytes allocated
+==14544== 
+==14544== 71,984 (61,856 direct, 10,128 indirect) bytes in 3,866 blocks are definitely lost in loss record 2 of 2
+==14544==    at 0x4A06A2E: malloc (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14544==    by 0x401456: put_hashset (hashset.c:58)
+==14544==    by 0x401D75: load_dictionary (spellchk.c:83)
+==14544==    by 0x401F03: main (spellchk.c:127)
+==14544== 
+==14544== LEAK SUMMARY:
+==14544==    definitely lost: 61,856 bytes in 3,866 blocks
+==14544==    indirectly lost: 10,128 bytes in 633 blocks
+==14544==      possibly lost: 0 bytes in 0 blocks
+==14544==    still reachable: 0 bytes in 0 blocks
+==14544==         suppressed: 0 bytes in 0 blocks
+==14544== 
+==14544== For counts of detected and suppressed errors, rerun with: -v
+==14544== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)
+]0;khigh@be-linux40:asg5[khigh@be-linux40 asg5]$ valgrind --leak-check=full spellchk < /dev/null[1@-[1@d[1@ [1@u[1@s[1@e[1@r[1@.[1@d[80Gl l[A[71G[80G[71G[1@i[80Gull[A[72G[80G[72G[1@c[80Gnlull[A[73G[80G[73G[1@t[80G/unull[A[74G[80G[74G[1@ [80Gvn[1@/[A[75G[80Gv/
+==14546== Memcheck, a memory error detector
+==14546== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==14546== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==14546== Command: spellchk -d user.dict
+==14546== 
+==14546== 
+==14546== HEAP SUMMARY:
+==14546==     in use at exit: 72,112 bytes in 4,507 blocks
+==14546==   total heap usage: 50,353 allocs, 45,846 frees, 1,675,518 bytes allocated
+==14546== 
+==14546== 72,112 (61,936 direct, 10,176 indirect) bytes in 3,871 blocks are definitely lost in loss record 2 of 2
+==14546==    at 0x4A06A2E: malloc (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14546==    by 0x401456: put_hashset (hashset.c:58)
+==14546==    by 0x401D75: load_dictionary (spellchk.c:83)
+==14546==    by 0x401F03: main (spellchk.c:127)
+==14546== 
+==14546== LEAK SUMMARY:
+==14546==    definitely lost: 61,936 bytes in 3,871 blocks
+==14546==    indirectly lost: 10,176 bytes in 636 blocks
+==14546==      possibly lost: 0 bytes in 0 blocks
+==14546==    still reachable: 0 bytes in 0 blocks
+==14546==         suppressed: 0 bytes in 0 blocks
+==14546== 
+==14546== For counts of detected and suppressed errors, rerun with: -v
+==14546== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)
+]0;khigh@be-linux40:asg5[khigh@be-linux40 asg5]$ exit
+exit
+
+Script done on Fri 14 Mar 2014 05:58:43 PM PDT
